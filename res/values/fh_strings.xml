@@ -1378,5 +1378,10 @@
     <string name="su_indicator">Superuser indicator</string>
     <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
     <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
+    <string name="recents_clear_all_dismiss_all_summary">Include foreground task when clearing all</string>
+    <string name="recents_searchbar_title">Search bar</string>
+    <string name="recents_searchbar_summary">Show Google search bar in the recents screen</string>
+    <string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
 
 </resources>
