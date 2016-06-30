@@ -47,6 +47,7 @@ import com.android.settings.notification.OtherSoundSettings;
 import com.android.settings.notification.SoundSettings;
 import com.android.settings.notification.ZenModePrioritySettings;
 import com.android.settings.notification.ZenModeSettings;
+import com.android.settings.fh.FhSettings;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.users.UserSettings;
@@ -95,6 +96,13 @@ public final class SearchIndexableResources {
                         NO_DATA_RES_ID,
                         BluetoothSettings.class.getName(),
                         R.drawable.ic_settings_bluetooth));
+
+        sResMap.put(FhSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(FhSettings.class.getName()),
+                        NO_DATA_RES_ID,
+                        FhSettings.class.getName(),
+                        R.drawable.ic_fhsettings));
 
         sResMap.put(SimSettings.class.getName(),
                 new SearchIndexableResource(

@@ -93,27 +93,26 @@
         </dashboard-tile>
     </dashboard-category>
 
+	<!-- FHSettings -->
+    <dashboard-category
+            android:id="@+id/fh_section"
+            android:title="@string/fh_section_title" >
+
+        <!-- FHSettings -->
+        <dashboard-tile
+                android:id="@+id/fh_settings"
+                android:title="@string/fh_settings_title"
+                android:fragment="com.android.settings.fh.MainSettings"
+                android:icon="@drawable/ic_fh_logo"
+                />
+	
+    </dashboard-category>
+
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"
             android:key="@string/category_key_device"
             android:title="@string/header_category_device" >
-
-        <!-- Sound -->
-        <dashboard-tile
-                android:id="@+id/sound_settings"
-                android:title="@string/category_sounds"
-                android:fragment="com.android.settings.notification.SoundSettings"
-                android:icon="@drawable/ic_settings_sounds"
-                />
-
-        <!-- Display & lights -->
-        <dashboard-tile
-                android:id="@+id/display_and_lights_settings"
-                android:title="@string/display_and_lights"
-                android:fragment="com.android.settings.DisplaySettings"
-                android:icon="@drawable/ic_settings_display"
-                />
 
         <!-- Themes -->
         <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
@@ -126,41 +125,6 @@
                 <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
             </intent>
         </dashboard-tile>
-
-        <!-- Notification manager -->
-        <dashboard-tile
-                android:id="@+id/notification_manager"
-                android:title="@string/notification_manager"
-                android:fragment="com.android.settings.notification.NotificationManagerSettings"
-                android:icon="@drawable/ic_settings_notifications"
-                />
-
-        <!-- Lock screen -->
-        <dashboard-tile
-                android:id="@+id/lockscreen_settings"
-                android:title="@string/lockscreen_settings"
-                android:fragment="com.android.settings.SecuritySettings"
-                android:icon="@drawable/ic_settings_lockscreen">
-                <extra android:name="filter_type" android:value="0" />
-        </dashboard-tile>
-
-        <!-- Buttons -->
-        <dashboard-tile
-                android:id="@+id/button_settings"
-                android:title="@string/button_pref_title"
-                android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_settings_buttons"
-                />
-
-        <external-tiles />
-
-        <!-- Battery -->
-        <dashboard-tile
-                android:id="@+id/battery_settings"
-                android:title="@string/power_usage_summary_title"
-                android:fragment="com.android.settings.fuelgauge.PowerUsageSummary"
-                android:icon="@drawable/ic_settings_battery"
-                />
 
         <!-- Security -->
         <dashboard-tile
@@ -208,14 +172,6 @@
                 android:fragment="com.android.settings.profiles.ProfilesSettings"
                 android:title="@string/profiles_settings_title"
                 android:icon="@drawable/ic_settings_profiles"
-                />
-
-        <!-- Status bar -->
-        <dashboard-tile
-                android:id="@+id/status_bar_settings"
-                android:title="@string/status_bar_title"
-                android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
-                android:icon="@drawable/ic_settings_statusbar"
                 />
 
         <!-- Application Settings -->

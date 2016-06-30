@@ -44,9 +44,9 @@
     <!-- NFC PreferenceCategory title -->
     <string name="nfc_title_category">NFC</string>
 
-    <!-- About phone screen, CyanogenMod version -->
-    <string name="mod_version">CyanogenMod version</string>
-    <string name="mod_version_default">Unknown</string>
+    <!-- About phone screen, FireHound version -->
+    <string name="mod_version">FireHound version</string>
+    <string name="mod_version_default">1.0</string>
 
     <!-- About phone screen, Device model -->
     <string name="device_model">Device model</string>
@@ -296,6 +296,10 @@
     <string name="pulse_speed_slow">Slow</string>
     <string name="pulse_speed_very_slow">Very slow</string>
 
+    <!-- FHSettings -->
+    <string name="fh_settings_title">FireHound Ashes</string>
+    <string name="fh_section_title">Burnt Extra's</string>
+      
     <!-- Battery light settings -->
     <string name="battery_light_title">Battery light</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
