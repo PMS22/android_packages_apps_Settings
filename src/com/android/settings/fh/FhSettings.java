@@ -30,7 +30,7 @@ import java.util.List;
 
 import com.android.internal.logging.MetricsLogger;
 
-public class MainSettings extends SettingsPreferenceFragment {
+public class FhSettings extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

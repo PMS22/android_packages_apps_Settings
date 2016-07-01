@@ -102,7 +102,7 @@
         <dashboard-tile
                 android:id="@+id/fh_settings"
                 android:title="@string/fh_settings_title"
-                android:fragment="com.android.settings.fh.MainSettings"
+                android:fragment="com.android.settings.fh.FhSettings"
                 android:icon="@drawable/ic_fh_logo"
                 />
 	
