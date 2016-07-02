@@ -102,7 +102,7 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(FhSettings.class.getName()),
                         NO_DATA_RES_ID,
                         FhSettings.class.getName(),
-                        R.drawable.ic_fhsettings));
+                        R.drawable.ic_fh_logo));
 
         sResMap.put(SimSettings.class.getName(),
                 new SearchIndexableResource(
