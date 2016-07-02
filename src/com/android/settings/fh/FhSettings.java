@@ -36,7 +36,7 @@ public class FhSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.fh_main_settings);
+        addPreferencesFromResource(R.xml.fh_settings);
     }
 
     protected int getMetricsCategory()
