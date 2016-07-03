@@ -32,7 +32,12 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="@string/additional_system_update"
                     android:targetClass="@string/additional_system_update_menu" />
-        </PreferenceScreen>  -->
+	</PreferenceScreen>
+
+	<!-- About FireHound -->
+	<PreferenceScreen android:key="about"
+                    android:title="@string/about_fh"
+                    android:fragment="com.android.settings.fh.Info" />
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
