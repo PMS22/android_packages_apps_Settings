@@ -28,15 +28,15 @@ import com.android.settings.R;
 
 import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
-public class About extends SettingsPreferenceFragment {
+public class Info extends SettingsPreferenceFragment {
 
-    public static final String TAG = "About";
+    public static final String TAG = "Info";
 
     private static final String KEY_FH_SHARE = "share";
 
     Preference mSourceUrl;
     Preference mGoogleUrl;
-    Preference mDeveloperUrl:
+    Preference mDeveloperUrl;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -62,13 +62,6 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://plus.google.com/communities/114615598909452601377");
         } else if (preference == mDeveloperUrl) {
             launchUrl("https://github.com/PMS22");
-        } else if (preference.getKey().equals(KEY_FH_SHARE)) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, String.format(
-                getActivity().getString(R.string.share_message), Build.MODEL));
-        startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
