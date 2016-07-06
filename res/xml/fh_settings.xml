@@ -47,6 +47,7 @@
             android:title="@string/lockscreen_settings" 
 	    android:fragment="com.android.settings.SecuritySettings" 
 	    android:icon="@drawable/ic_settings_lockscreen" />
+	    <extra android:name="filter_type" android:value="0" />
 
 	<!-- Display Settings -->
 	<PreferenceScreen
