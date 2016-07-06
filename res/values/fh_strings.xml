@@ -1258,18 +1258,8 @@
     <string name="default_string">Default</string>
     
 	<!-- OwnStrings -->
-	<string name="ownrom_section_key">OwnROM</string>
-	<string name="ownrom_section">OwnROM</string>
-	<string name="own_settings_title">OwnSettings</string>
 	<string name="recents_settings_title">Recents</string>
 	<string name="notification_drawer_title">Notification Drawer</string>
-	<string name="own_interface_title">Interface</string>
-	<string name="own_categories_title">Categories</string>
-	<string name="own_statusbar_icons_title">Statusbar Icons</string>
-	<string name="own_statusbar_clock_date_title">Clock and Date</string>
-	<string name="own_statusbar_battery_icon_title">Battery icon</string>
-	<string name="own_statusbar_other_title">Others</string>
-    <string name="kernel_aduitor">Kernel Settings</string>
 
     <!-- Recents panel -->
     <string name="recents_panel_category">Recents panel</string>
@@ -1346,27 +1336,5 @@
     <string name="clock_font_medium">Medium</string>
     <string name="clock_font_medium_italic">Medium Italic</string>
     <string name="clock_font_size_title">Font size</string>
-    
-    <!-- Network traffic -->
-    <string name="network_traffic_title">Network traffic</string>
-    <string name="show_network_traffic_state">Status bar traffic monitor</string>
-    <string name="network_traffic_summary">Enable various network traffic options in statusbar</string>
-    <string name="show_network_traffic_unit">Display unit</string>
-    <string name="show_network_traffic_frequency">Update interval</string>
-    <string name="show_network_traffic_disable">Disabled</string>
-    <string name="show_network_traffic_up">Outgoing</string>
-    <string name="show_network_traffic_down">Incoming</string>
-    <string name="show_network_traffic_all">Outgoing and incoming</string>
-    <string name="show_network_traffic_bit">Bits per second</string>
-    <string name="show_network_traffic_byte">Bytes per second</string>
-    <string name="show_network_traffic_500">500 ms</string>
-    <string name="show_network_traffic_1000">1000 ms</string>
-    <string name="show_network_traffic_1500">1500 ms</string>
-    <string name="show_network_traffic_2000">2000 ms</string>
-    <string name="network_traffic_autohide">Auto hide</string>
-    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
-    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
-    <string name="network_traffic_color_style">Color style</string>
-    <string name="network_traffic_color_reset">Reset color</string>
-    <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+
 </resources>
