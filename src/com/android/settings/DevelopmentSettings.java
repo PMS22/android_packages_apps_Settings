@@ -123,6 +123,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String LOCAL_BACKUP_PASSWORD = "local_backup_password";
     private static final String HARDWARE_UI_PROPERTY = "persist.sys.ui.hw";
     private static final String MSAA_PROPERTY = "debug.egl.force_msaa";
+    private static final String BUGREPORT = "bugreport";
+    private static final String BUGREPORT_IN_POWER_KEY = "bugreport_in_power";
     private static final String OPENGL_TRACES_PROPERTY = "debug.egl.trace";
     private static final String TUNER_UI_KEY = "tuner_ui";
     private static final String COLOR_TEMPERATURE_PROPERTY = "persist.sys.debug.color_temp";
@@ -231,7 +233,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Preference mBugreport;
     private SwitchPreference mBugreportInPower;
     private ListPreference mKeepScreenOn;
-    private SwitchPreference mKeepScreenOn;
     private SwitchPreference mBtHciSnoopLog;
     private SwitchPreference mEnableOemUnlock;
     private SwitchPreference mDebugViewAttributes;
@@ -369,7 +370,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mBugreport = findPreference(BUGREPORT);
         mBugreportInPower = findAndInitSwitchPref(BUGREPORT_IN_POWER_KEY);
         mKeepScreenOn = addListPreference(KEEP_SCREEN_ON_MODES);
-        mKeepScreenOn = findAndInitSwitchPref(KEEP_SCREEN_ON);
         mBtHciSnoopLog = findAndInitSwitchPref(BT_HCI_SNOOP_LOG);
         mEnableOemUnlock = findAndInitSwitchPref(ENABLE_OEM_UNLOCK);
         if (!showEnableOemUnlockPreference()) {
@@ -695,8 +695,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateSwitchPreference(mBugreportInPower, Settings.Secure.getInt(cr,
                 Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0);
         updateStayAwakeOptions();
-        updateSwitchPreference(mKeepScreenOn, Settings.Global.getInt(cr,
-                Settings.Global.STAY_ON_WHILE_PLUGGED_IN, 0) != 0);
         updateSwitchPreference(mBtHciSnoopLog, Settings.Secure.getInt(cr,
                 Settings.Secure.BLUETOOTH_HCI_LOG, 0) != 0);
         if (mEnableOemUnlock != null) {
@@ -732,6 +730,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateAppProcessLimitOptions();
         updateShowAllANRsOptions();
         updateVerifyAppsOverUsbOptions();
+        updateBugreportOptions();
         updateForceRtlOptions();
         updateLogdSizeValues();
         updateWifiDisplayCertificationOptions();
@@ -1121,6 +1120,37 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private void setEnableMultiWindow(boolean value) {
         SystemProperties.set(MULTI_WINDOW_SYSTEM_PROPERTY, String.valueOf(value));
         pokeSystemProperties();
+    }
+
+    private void updateBugreportOptions() {
+        final ComponentName bugreportStorageProviderComponentName =
+                new ComponentName("com.android.shell",
+                        "com.android.shell.BugreportStorageProvider");
+        if ("user".equals(Build.TYPE)) {
+            final ContentResolver resolver = getActivity().getContentResolver();
+            final boolean adbEnabled = Settings.Global.getInt(
+                    resolver, Settings.Global.ADB_ENABLED, 0) != 0;
+            if (adbEnabled) {
+                mBugreport.setEnabled(true);
+                mBugreportInPower.setEnabled(true);
+                getPackageManager().setComponentEnabledSetting(
+                        bugreportStorageProviderComponentName,
+                        PackageManager.COMPONENT_ENABLED_STATE_ENABLED, 0);
+            } else {
+                mBugreport.setEnabled(false);
+                mBugreportInPower.setEnabled(false);
+                mBugreportInPower.setChecked(false);
+                Settings.Secure.putInt(resolver, Settings.Secure.BUGREPORT_IN_POWER_MENU, 0);
+                getPackageManager().setComponentEnabledSetting(
+                        bugreportStorageProviderComponentName,
+                        PackageManager.COMPONENT_ENABLED_STATE_DEFAULT, 0);
+            }
+        } else {
+            mBugreportInPower.setEnabled(true);
+            getPackageManager().setComponentEnabledSetting(
+                    bugreportStorageProviderComponentName,
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED, 0);
+        }
     }
 
     // Returns the current state of the system property that controls
@@ -1908,6 +1938,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                         Settings.Global.ADB_ENABLED, 0);
                 mVerifyAppsOverUsb.setEnabled(false);
                 mVerifyAppsOverUsb.setChecked(false);
+                updateBugreportOptions();
             }
         } else if (preference == mAdbNotify) {
             CMSettings.Secure.putInt(getActivity().getContentResolver(),
@@ -1946,11 +1977,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.BUGREPORT_IN_POWER_MENU,
                     mBugreportInPower.isChecked() ? 1 : 0);
-        } else if (preference == mKeepScreenOn) {
-            Settings.Global.putInt(getActivity().getContentResolver(),
-                    Settings.Global.STAY_ON_WHILE_PLUGGED_IN,
-                    mKeepScreenOn.isChecked() ?
-                            (BatteryManager.BATTERY_PLUGGED_AC | BatteryManager.BATTERY_PLUGGED_USB) : 0);
         } else if (preference == mBtHciSnoopLog) {
             writeBtHciSnoopLogOptions();
         } else if (preference == mEnableOemUnlock) {
@@ -2185,9 +2211,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             if (which == DialogInterface.BUTTON_POSITIVE) {
                 CMSettings.Secure.putInt(getActivity().getContentResolver(),
                         CMSettings.Secure.ADB_PORT, 5555);
-            } else {
-                // Reset the toggle
-                mEnableAdb.setChecked(false);
             }
         } else if (dialog == mAdbKeysDialog) {
             if (which == DialogInterface.BUTTON_POSITIVE) {
