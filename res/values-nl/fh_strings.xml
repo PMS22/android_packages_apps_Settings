@@ -1019,5 +1019,59 @@
      <!-- Battery saver color -->
      <string name="battery_saver_color_title">Waarschuwings kleur</string>
      <string name="battery_saver_color_summary">Schakel oranje kleur in op navigatie en statusbalk als besparings modes zijn ingeschakeld</string>
-
+      <!-- Color Picker -->
+      <string name="dialog_color_picker">Kleuren kiezer</string>
+      <string name="press_color_to_apply">Druk op kleur om toe te passen</string>
+      <string name="set">Pas toe</string>
+      <string name="color_default">Standaard</string>
+      <!--Status bar date -->
+      <string name="status_bar_clock_category">Klok</string>
+      <string name="status_bar_date_title">Datum</string>
+      <string name="status_bar_date_none">Verborgen (Standaard)</string>
+      <string name="status_bar_date_small">Klein</string>
+      <string name="status_bar_date_normal">Normaal</string>
+      <string name="status_bar_date_format_title">Datum formaat</string>
+      <string name="status_bar_date_style">Datum style</string>
+      <string name="status_bar_date_style_normal">Normaal</string>
+      <string name="status_bar_date_style_lowercase">Kleine letters</string>
+      <string name="status_bar_date_style_uppercase">Grote letters</string>
+      <string name="status_bar_date_format_custom">Custom java formaat</string>
+      <string name="status_bar_date_string_edittext_title">Moet in datum formaat bijv. dd/mm/yy</string>
+      <string name="status_bar_date_string_edittext_summary">Voer formaat in</string>
+      <!-- Status bar - Clock -->
+      <string name="clock_color_title">Kleur</string>
+      <string name="status_bar_clock_style_reset">Reset kleur</string>
+      <string name="status_bar_clock_style_reset_message">Klok kleur resetten?</string> 
+      <string name="clock_font_style_title">Lettertype</string>
+      <string name="clock_font_normal">Normaal</string>
+      <string name="clock_font_italic">Schuin</string>
+      <string name="clock_font_bold">Dik</string>
+      <string name="clock_font_bold_italic">Dik/Schuin</string>
+      <string name="clock_font_light">Licht</string>
+      <string name="clock_font_light_italic">Licht/Schuin</string>
+      <string name="clock_font_thin">Dun</string>
+      <string name="clock_font_thin_italic">Dun/Schuin</string>
+      <string name="clock_font_condensed">Concentreerd</string>
+      <string name="clock_font_condensed_italic">Geconcentreed/Schuin</string>
+      <string name="clock_font_condensed_bold">Geconcentreerd/Dik</string>
+      <string name="clock_font_condensed_bold_italic">Geconcetreerd/Dik/Schuin</string>
+      <string name="clock_font_medium_italic">Medium/Schuin</string>
+      <string name="clock_font_size_title">Letter grote</string>
+      <!-- Network traffic -->
+      <string name="network_traffic_title">Netwerk verkeer</string>
+      <string name="show_network_traffic_state">Status balk verkeer monitor</string>
+      <string name="network_traffic_summary">Schakel verschillende netwerkverkeers opties in statusbalk in</string>
+      <string name="show_network_traffic_unit">Eenheden laten zien</string>
+      <string name="show_network_traffic_disable">Uitgeschakeld</string>
+      <string name="show_network_traffic_up">Uitgaand</string>
+      <string name="show_network_traffic_down">Binnenkomend</string>
+      <string name="show_network_traffic_all">Uitgaand en binnenkomend</string>
+      <string name="show_network_traffic_bit">Bits per seconde</string>
+      <string name="show_network_traffic_byte">Bytes per seconde</string>
+      <string name="network_traffic_autohide">Verberg automatisch</string>
+      <string name="network_traffic_autohide_summary">Verberg monitor als er geen activiteit is</string>
+      <string name="network_traffic_autohide_threshold">Inactiviteits interval</string>
+      <string name="network_traffic_color_style">Kleur styl</string>
+      <string name="network_traffic_color_reset">Reset Kleur</string>
+      <string name="network_traffic_color_reset_message">Kleuren resetten?</string>
 </resources>
