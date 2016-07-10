@@ -43,9 +43,6 @@
 
     <!-- NFC PreferenceCategory title -->
     <string name="nfc_title_category">NFC</string>
-    
-    <!-- QS shade transparency -->
-    <string name="qs_transparent_shade">QS shade transparency [needs reboot]</string>
 
     <!-- About phone screen, FireHound version -->
     <string name="mod_version">FireHound version</string>
