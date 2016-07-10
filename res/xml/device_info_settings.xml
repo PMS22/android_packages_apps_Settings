@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2008 The Android Open Source Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +14,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
-         <!-- System update settings - launches activity -->
+        <!-- System update settings - launches activity -->
         <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title"
                 android:summary="@string/system_update_settings_list_item_summary">
@@ -34,10 +31,14 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
 
-        	<!-- About FireHound -->
-        	<PreferenceScreen android:key="about"
-                    android:title="@string/about_fh"
-                    android:fragment="com.android.settings.fh.Info" />
+        <!-- CyanogenMod Updates -->
+        <PreferenceScreen android:key="cm_updates"
+                android:title="@string/cmupdate_settings_title"
+                android:summary="@string/system_update_settings_list_item_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.cyanogenmod.updater"
+                    android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
+        </PreferenceScreen>
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
@@ -70,6 +71,12 @@
         <!-- Feedback on the device -->
         <PreferenceScreen android:key="device_feedback"
                 android:title="@string/device_feedback">
+        </PreferenceScreen>
+
+        <!-- Contributors cloud -->
+        <PreferenceScreen android:key="contributors_cloud"
+            android:title="@string/contributors_cloud_fragment_title"
+            android:fragment="com.android.settings.contributors.ContributorsCloudFragment" >
         </PreferenceScreen>
 
         <!-- Device name -->
