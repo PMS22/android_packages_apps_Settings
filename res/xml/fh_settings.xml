@@ -75,7 +75,7 @@
             android:id="@+id/recents_settings"
             android:fragment="com.android.settings.fh.RecentsSettings"
             android:title="@string/recents_settings_title" 
-	    android:icon="@drawable/ic_settings_sounds" />
+	    android:icon="@drawable/ic_fh_logo" />
 
 	</PreferenceCategory>
 	
